@@ -31,6 +31,11 @@ function insertFromInfo() {
 }
 
 function submitForm(evt) {
+  if (formDate.email === '' || formDate.message === '') {
+    alert('Зверніть увагу на незаповнені поля ');
+    return;
+  }
+
   evt.preventDefault();
   evt.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
